@@ -14,7 +14,8 @@ var app = express();
 
 app.use(helmet());
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://library:library@cluster0.xo1ph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var url = 'mongodb+srv://library:library@cluster0.xo1ph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI || url;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 //mongoose.connect('mongodb://localhost/users_test');
 
