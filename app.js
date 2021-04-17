@@ -17,7 +17,7 @@ var mongoose = require('mongoose');
 //heroku config:set MONGODB_URI='mongodb+srv://library:library@cluster0.xo1ph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 //heroku config:set MONGODB_URI='mongodb+srv://library:library@cluster0.xo1ph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 var url = 'mongodb+srv://library:library@cluster0.xo1ph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-var mongoDB =  url;
+var mongoDB = process.env.MONGODB_URI || url;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 //mongoose.connect('mongodb://localhost/users_test');
 
